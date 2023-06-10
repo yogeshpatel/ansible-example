@@ -14,7 +14,12 @@
     
     - name:
       ansible.builtin.command: whoami
+      register: whoisthis
 
     - name: Display the outcome
       debug:
         msg: '{{ result }}'
+
+    - name: Display the whoami
+      debug:
+        msg: '{{ whoisthis }}'
