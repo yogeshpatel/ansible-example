@@ -25,8 +25,8 @@
       debug:
         msg: '{{ whoisthis }}'
         
-    - name: test yum
-      ansible.builtin.yum:
+    - name: test
+      yum:
         name: 'zlib'
         state: latest
       register: result_yum
