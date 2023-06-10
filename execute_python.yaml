@@ -26,10 +26,10 @@
       debug:
         msg: '{{ whoisthis }}'
         
-    - name: Upgrade all packages
+    - name: test yum
       ansible.builtin.yum:
-      name: 'zlib'
-      state: latest
+        name: 'zlib'
+        state: latest
       register: result_yum
       
     - name: yum info zlib
