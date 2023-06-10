@@ -2,9 +2,9 @@
 
 - hosts: localhost
   gather_facts: true
-  become_method: sudo
-  become_user: root
-  become: yes
+#   become_method: sudo
+#   become_user: root
+#   become: yes
 
   tasks:
     - name: Run the specified shell command
@@ -29,7 +29,7 @@
         
     - name: test
       ansible.builtin.shell:
-        cmd: ls -ltr
+        cmd: ps aux
       register: result_yum
       
     - name: yum info zlib
