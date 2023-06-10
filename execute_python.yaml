@@ -12,8 +12,8 @@
       connection: local
       register: result
     
-    - name:
-      ansible.builtin.command: whoami
+    # - name:
+    #   ansible.builtin.command: whoami
 
     - name: Display the outcome
       debug:
