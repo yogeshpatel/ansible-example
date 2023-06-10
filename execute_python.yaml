@@ -2,7 +2,7 @@
 
 - hosts: localhost
   gather_facts: true
-  become: yes
+#   become: yes
   tasks:
     - name: Run the specified shell command
       shell:
@@ -12,8 +12,8 @@
       connection: local
       register: result
     
-    # - name:
-    #   ansible.builtin.command: whoami
+    - name:
+      ansible.builtin.command: whoami
 
     - name: Display the outcome
       debug:
