@@ -26,14 +26,12 @@
       debug:
         msg: '{{ whoisthis }}'
         
-    - name: Run the yum info
-      shell:
-        cmd: |
-              yum info zlib
-      delegate_to: localhost
-      connection: local
+    - name: Upgrade all packages
+      ansible.builtin.yum:
+      name: 'zlib'
+      state: latest
       register: result_yum
       
-     - name: Display the whoami
+    - name: yum info zlib
       debug:
-        msg: '{{ whoisthis }}'
+        msg: '{{ result_yum }}'
