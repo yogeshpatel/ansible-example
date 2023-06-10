@@ -2,7 +2,6 @@
 
 - hosts: localhost
   gather_facts: true
-  become: yes
 #   become_method: su
 #   become_user: root
   tasks:
@@ -31,6 +30,8 @@
         name: 'zlib'
         state: latest
       register: result_yum
+      become: yes
+      sudo: yes
       
     - name: yum info zlib
       debug:
