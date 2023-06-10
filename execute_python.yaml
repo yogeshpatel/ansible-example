@@ -27,11 +27,11 @@
       debug:
         msg: '{{ whoisthis }}'
         
-    - name: test
-      ansible.builtin.shell:
-        cmd: ps ux
-      register: result_yum
+#     - name: test
+#       ansible.builtin.shell:
+#         cmd: ps ux
+#       register: result_yum
       
-    - name: yum info zlib
-      debug:
-        msg: '{{ result_yum }}'
+#     - name: yum info zlib
+#       debug:
+#         msg: '{{ result_yum }}'
