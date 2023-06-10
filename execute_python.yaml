@@ -1,0 +1,17 @@
+---
+
+- hosts: localhost
+  gather_facts: true
+  tasks:
+    - name: Run the specified shell command
+      shell:
+        cmd: |
+              python3 ./lucky.py
+      delegate_to: localhost
+      connection: local
+      register: result
+      
+
+    - name: Display the outcome
+      debug:
+        msg: '{{ result }}'
