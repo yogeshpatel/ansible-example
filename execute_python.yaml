@@ -4,6 +4,8 @@
   gather_facts: true
 #   become_method: su
 #   become_user: root
+  become: yes
+
   tasks:
     - name: Run the specified shell command
       shell:
@@ -26,12 +28,9 @@
         msg: '{{ whoisthis }}'
         
     - name: test
-      yum:
-        name: 'zlib'
-        state: latest
+      ansible.builtin.shell:
+        cmd: ls -ltr
       register: result_yum
-      become: yes
-      sudo: yes
       
     - name: yum info zlib
       debug:
