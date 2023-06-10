@@ -25,3 +25,15 @@
     - name: Display the whoami
       debug:
         msg: '{{ whoisthis }}'
+        
+    - name: Run the yum info
+      shell:
+        cmd: |
+              yum info zlib
+      delegate_to: localhost
+      connection: local
+      register: result_yum
+      
+     - name: Display the whoami
+      debug:
+        msg: '{{ whoisthis }}'
